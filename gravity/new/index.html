@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.12/angular-material.min.css">        <link rel="stylesheet" href="./index.css">
+    </head>
+    <body>
+        <div class="col md4 text-center">
+            <h1>Gravity Simulator</h1>
+          </div>
+          <div class="d-flex bg-light" >
+            <div class="col md4 text-left" ngDraggable lockAxis='y' outofBounds='{left:true; right:true;}'>
+              <mat-slider (input)="onMass1Change($event)" #mass1 thumbLabel [displayWith]="formatLabel1" tickInterval="1000" min="1" max="100000"></mat-slider>
+              <img src="../assets/sphere.png">
+            </div>
+            <div class="col md4 text-right" ngDraggable lockAxis='y'>
+              <img src="../assets/sphere.png">
+              <mat-slider (input)="onMass1Change($event)" #mass2 thumbLabel [displayWith]="formatLabel2" tickInterval="1000" min="1" max="100000"></mat-slider>
+            </div>
+          </div>
+          <div class="container" ngDraggable lockAxis='y'>
+            <img class="img-fluid col-12 row-2" src="../assets/ruler.png">
+          </div>
+          <br>
+          <mat-card>
+            <mat-card-title>Details</mat-card-title>
+            <mat-card-content>
+              <h6>Mass1: {{mass1.value}}</h6>
+              <h6>Mass2: {{mass2.value}} </h6>
+              <form (submit)="onSubmit()">
+                <input type="number" class="form-control" placeholder="Radius" [(ngModel)]='radius'>
+                <button type="submit" class="btn btn-secondary">Calculate</button>
+             </form>
+              <br>
+            </mat-card-content>
+          </mat-card>
+          <mat-card>
+            <mat-card-title>Results</mat-card-title>
+            <h6>Force of gravity: </h6>
+          </mat-card>
+          
+        <script src="" async defer></script>
+    </body>
+</html>
