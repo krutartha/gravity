@@ -1,4 +1,4 @@
-# gravity_simulator
+# gravity
 
 We know that, 
 
