@@ -16,7 +16,7 @@
         <span class="navbar-brand mb-0 h1 text-white">Gravitational Force Calculator</span>
         <ul class="nav">
           <li class="nav-item">
-              <a class="nav-link active" href="./cavendish.html">Henry Cavendish</a>
+              <a class="nav-link active" href="./index.html">Simulator</a>
           </li>
       </ul>
     </nav>
@@ -24,25 +24,22 @@
   <div class="container">
     <div class="card">
       <div class="card-body">
-        <div class="container">
-            <img class="w-25 float-left " src='./assets/sphere.png' id="ball-left">
-        </div>
-        <div class="container">
-            <img id="ball-right" class="w-25 float-right " src='./assets/sphere.png'>
-        </div>
-        <div class="text-center">
-            <img id="ruler"  class = "text-center w-75" src='./assets/ruler.png'>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">F</span>
+          </div>
+          <input type="number" class="form-control" id="radius" placeholder="Enter the force" aria-label="Username"
+            aria-describedby="basic-addon1">
+          <button type="button" id="button" class="btn btn-primary">Calculate</button>
+          <br>
         </div>
       </div>
     </div>
   </div>
+  <br>
   <div class="container">
     <div class="card">
       <div class="card-body">
-        <label for="customRange1" id="mass1">Mass 1: 5000</label>
-          <input type="range" class="custom-range" min="1000" max="10000" id="m1">
-        <label for="customRange1" id="mass2">Mass 2: 5000</label>
-        <input type="range" class="custom-range" min="1000" max="10000" id="m2">
         <div class="input-group mb-3">
           <div class="input-group-prepend">
             <span class="input-group-text" id="basic-addon1">R</span>
@@ -51,7 +48,22 @@
             aria-describedby="basic-addon1">
           <button type="button" id="button" class="btn btn-primary">Calculate</button>
           <br>
-
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="container">
+    <div class="card">
+      <div class="card-body">
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">m</span>
+          </div>
+          <input type="number" class="form-control" id="radius" placeholder="Enter the smaller mass" aria-label="Username"
+            aria-describedby="basic-addon1">
+          <button type="button" id="button" class="btn btn-primary">Calculate</button>
+          <br>
         </div>
       </div>
     </div>
