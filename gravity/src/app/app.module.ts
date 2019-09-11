@@ -7,6 +7,9 @@ import {MatButtonModule} from '@angular/material/button';
 import {AngularDraggableModule } from 'angular2-draggable';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import { ChartsModule } from 'ng2-charts';
+
+
 
 
 
@@ -27,7 +30,9 @@ import { AppComponent } from './app.component';
     AngularDraggableModule,
     MatButtonModule,
     MatMenuModule,
-    MatToolbarModule
+    MatToolbarModule,
+    ChartsModule
+    
 
   ],
   providers: [],

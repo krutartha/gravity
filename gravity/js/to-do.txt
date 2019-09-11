@@ -1,0 +1,8 @@
+F = Gm1m2/r^2
+
+G = 6.67 x 10^-11
+
+Masses = controlled 
+const = G
+r = input variable 
+independent = force 

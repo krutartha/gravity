@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-light bg-dark">
+        <span class="navbar-brand mb-0 h1 text-white">Gravitational Force Calculator</span>
+    </nav>
+    <br>
+  <div class="container">
+    <div class="card">
+      <div class="card-body">
+        <div class="container">
+            <img class="w-25 float-left " src='./assets/sphere.png' id="ball-left">
+        </div>
+        <div class="container">
+            <img id="ball-right" class="w-25 float-right " src='./assets/sphere.png'>
+        </div>
+        <div class="text-center">
+            <img id="ruler"  class = "text-center w-75" src='./assets/ruler.png'>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="card">
+      <div class="card-body">
+        <label for="customRange1" id="mass1">Mass 1: 5000</label>
+          <input type="range" class="custom-range" min="1000" max="10000" id="m1">
+        <label for="customRange1" id="mass2">Mass 2: 5000</label>
+        <input type="range" class="custom-range" min="1000" max="10000" id="m2">
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">R</span>
+          </div>
+          <input type="number" class="form-control" id="radius" placeholder="Enter the distance" aria-label="Username"
+            aria-describedby="basic-addon1">
+          <button type="button" id="button" class="btn btn-primary">Calculate</button>
+          <br>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="container">
+    <div class="card">
+      <div class="card-body">
+        <h6 class="float-left"id="force">Gravitational Force: </h6>
+        <form method="post" action="db.php">
+            <button  type="button" id="addBtn" class="btn btn-primary float-right" data-clipboard-text="test">Copy to clipboard</button>
+        </form>
+
+      </div>
+    </div>
+  </div>
+  <br>
+
+  <div class="container">
+    <div class="card">
+      <div class="card-body">
+        <table class="table table-stripped">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Radius</th>
+              <th scope="col">Trial 1</th>
+              <th scope="col">Trial 2</th>
+              <th scope="col">Trial 3</th>
+              <th scope="col">Avg Force</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td><input id="r1" class="text-center form-control" type="number" placeholder="Radius"></td>
+              <td><input id="r1t1" class="text-center form-control"type="number" placeholder="F"></td>
+              <td><input id="r1t2" class="text-center form-control"type="number" placeholder="F"></td>
+              <td><input id="r1t3" class="text-center form-control"type="number" placeholder="F"></td>
+              <td><h4 id="r1a"class="text-center"></h4></td>
+            </tr>
+            <tr>
+              <th scope="row">1</th>
+              <td><input id="r2" class="text-center form-control" type="number" placeholder="Radius"></td>
+              <td><input id="r2t1" class="text-center form-control"type="number" placeholder="F"></td>
+              <td><input id="r2t2" class="text-center form-control"type="number" placeholder="F"></td>
+              <td><input id="r2t3" class="text-center form-control"type="number" placeholder="F"></td>
+              <td><h4 id="r2a" class="text-center"></h4></td>
+              <tr>
+                <th scope="row">1</th>
+                <td><input id="r3" class="text-center form-control" type="number" placeholder="Radius"></td>
+                <td><input id="r3t1" class="text-center form-control"type="number" placeholder="F"></td>
+                <td><input id="r3t2" class="text-center form-control"type="number" placeholder="F"></td>
+                <td><input id="r3t3" class="text-center form-control"type="number" placeholder="F"></td>
+                <td><h4 id="r3a" class="text-center"></h4></td>
+                <tr>
+                  <th scope="row">1</th>
+                  <td><input id="r4" class="text-center form-control" type="number" placeholder="Radius"></td>
+                  <td><input id="r4t1" class="text-center form-control"type="number" placeholder="F"></td>
+                  <td><input id="r4t2" class="text-center form-control"type="number" placeholder="F"></td>
+                  <td><input id="r4t3" class="text-center form-control"type="number" placeholder="F"></td>
+                  <td><h4 id="r4a" class="text-center"></h4></td>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td><input id="r5" class="text-center form-control" type="number" placeholder="Radius"></td>
+                    <td><input id="r5t1" class="text-center form-control"type="number" placeholder="F"></td>
+                    <td><input id="r5t2" class="text-center form-control"type="number" placeholder="F"></td>
+                    <td><input id="r5t3" class="text-center form-control"type="number" placeholder="F"></td>
+                    <td><h4 id="r5a" class="text-center"></h4></td>
+                    </tr>
+          </tbody>
+
+        </table>
+        <button  type="button" id="avgBtn" class="btn btn-primary float-right">Done</button>
+        <button  type="button" id="clrBtn" class="btn btn-primary float-left">Clear Table</button>
+
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="container">
+    <div class="card">
+      <div class="card-body">
+          <canvas id="myChart" width="200" height="100"></canvas>
+
+      </div>
+    </div>
+  </div>
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+    <script
+  src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+  integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+  crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js"></script>
+    <script src="./app.js" async defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js"></script>
+    <script src="./graph.js"></script>
+
+
+</body>
+
+</html>
